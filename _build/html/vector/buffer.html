@@ -1,7 +1,7 @@
-
+<!--
 
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -13,6 +13,7 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
 
   
@@ -27,10 +28,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -166,7 +167,7 @@
         <p class="caption">
             <span class="caption-text">Index:</span>
         </p>
-        <a href="/QGIS_documentation/genindex.html">Functions</a>
+        <a href="/genindex.html">Functions</a>
     
         </div>
         
@@ -210,9 +211,9 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="vector.html">3. Vector operations</a> &raquo;</li>
+          <li><a href="vector.html"><span class="section-number">3. </span>Vector operations</a> &raquo;</li>
         
-      <li>3.1. Buffer operations</li>
+      <li><span class="section-number">3.1. </span>Buffer operations</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -232,21 +233,21 @@
            <div itemprop="articleBody">
             
   <div class="section" id="buffer-operations">
-<h1>3.1. Buffer operations<a class="headerlink" href="#buffer-operations" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">3.1. </span>Buffer operations<a class="headerlink" href="#buffer-operations" title="Permalink to this headline">¶</a></h1>
 <p>We will now focus on the analysis and manipulation of line shapefiles. To do so, let’s consider only the <code class="file docutils literal notranslate"><span class="pre">roads_clip</span></code> shapefile.
 You can turn-off all the other layers in the <a class="reference internal" href="../preparation/preparation.html#layerspanel"><span class="std std-ref">Layers panel</span></a> to have a more compact visualization of the data.</p>
 <a class="reference internal image-reference" href="../_images/3_roads_network.PNG"><img alt="../_images/3_roads_network.PNG" src="../_images/3_roads_network.PNG" style="width: 100%;" /></a>
 <div class="section" id="single-buffer">
-<h2>3.1.1. <span class="target" id="index-0"></span>Single buffer<a class="headerlink" href="#single-buffer" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1.1. </span><span class="target" id="index-0"></span>Single buffer<a class="headerlink" href="#single-buffer" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>A very common operation with line shapefiles is the buffer, which allows to create an area within a specified distance from features.
 Note that in QGIS a buffer can be done also around point or polygon shapefiles. To create a buffer, click on
 <em>Vector-&gt;Geoprocessing Tools-&gt;Buffer</em> and specify the input parameters as follows:</p>
 <ul class="simple">
-<li><em>Input layer</em>: the <code class="file docutils literal notranslate"><span class="pre">roads_clip</span></code> layer</li>
-<li><em>Distance</em>: the desired distance (in our case 10m). Note that you can also specify the unit of measure</li>
-<li><em>Segments</em>: the number of line segments to be used to approximate a quarter circle when creating rounded offsets (in our case 5)</li>
-<li><em>Buffered</em>: the path and the name of the output vector layer. Note that if left empty a temporary layer will be created</li>
+<li><p><em>Input layer</em>: the <code class="file docutils literal notranslate"><span class="pre">roads_clip</span></code> layer</p></li>
+<li><p><em>Distance</em>: the desired distance (in our case 10m). Note that you can also specify the unit of measure</p></li>
+<li><p><em>Segments</em>: the number of line segments to be used to approximate a quarter circle when creating rounded offsets (in our case 5)</p></li>
+<li><p><em>Buffered</em>: the path and the name of the output vector layer. Note that if left empty a temporary layer will be created</p></li>
 </ul>
 <div class="line-block">
 <div class="line"><br /></div>
@@ -260,7 +261,7 @@ Note that in QGIS a buffer can be done also around point or polygon shapefiles. 
 </div></blockquote>
 </div>
 <div class="section" id="multi-ring-buffer">
-<h2>3.1.2. <span class="target" id="index-1"></span>Multi-ring buffer<a class="headerlink" href="#multi-ring-buffer" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1.2. </span><span class="target" id="index-1"></span>Multi-ring buffer<a class="headerlink" href="#multi-ring-buffer" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>You can also create multiple buffers around the same features, within a specified distance.</p>
 <p>To select the above function, we introduce here a very powerful instrument in QGIS: the Processing Toolbox. To add it to your window,
@@ -272,10 +273,10 @@ the functions of QGIS, and in particular, the search bar is very useful to find 
 </div>
 <p>In this case, you can search for “Multi-ring” and select the function <em>Multi-ring buffer (constant distance)</em>. The input parameters are:</p>
 <ul class="simple">
-<li><em>Input layer</em>: the <code class="file docutils literal notranslate"><span class="pre">roads_clip</span></code> layer</li>
-<li><em>Number of rings</em>: in our case 3</li>
-<li><em>Distance between rings</em>: in our case 10m</li>
-<li><em>Multi-ring buffer (constant distance)</em>: the path and the name of the output vector layer. Note that if left empty a temporary layer will be created</li>
+<li><p><em>Input layer</em>: the <code class="file docutils literal notranslate"><span class="pre">roads_clip</span></code> layer</p></li>
+<li><p><em>Number of rings</em>: in our case 3</p></li>
+<li><p><em>Distance between rings</em>: in our case 10m</p></li>
+<li><p><em>Multi-ring buffer (constant distance)</em>: the path and the name of the output vector layer. Note that if left empty a temporary layer will be created</p></li>
 </ul>
 <a class="reference internal image-reference" href="../_images/3.1_multi_ring_buffer.PNG"><img alt="../_images/3.1_multi_ring_buffer.PNG" src="../_images/3.1_multi_ring_buffer.PNG" style="width: 800px;" /></a>
 <div class="line-block">
@@ -310,7 +311,7 @@ the functions of QGIS, and in particular, the search bar is very useful to find 
         
         &copy; Copyright 2020, Lorenzo Amici
       <span class="lastupdated">
-        Last updated on Jul 15, 2020.
+        Last updated on Oct 20, 2020.
       </span>
 
     </p>

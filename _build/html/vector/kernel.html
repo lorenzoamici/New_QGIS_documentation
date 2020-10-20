@@ -1,7 +1,7 @@
-
+<!--
 
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -13,6 +13,7 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
 
   
@@ -27,10 +28,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -166,7 +167,7 @@
         <p class="caption">
             <span class="caption-text">Index:</span>
         </p>
-        <a href="/QGIS_documentation/genindex.html">Functions</a>
+        <a href="/genindex.html">Functions</a>
     
         </div>
         
@@ -210,9 +211,9 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="vector.html">3. Vector operations</a> &raquo;</li>
+          <li><a href="vector.html"><span class="section-number">3. </span>Vector operations</a> &raquo;</li>
         
-      <li>3.6. Kernel density</li>
+      <li><span class="section-number">3.6. </span>Kernel density</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -232,32 +233,32 @@
            <div itemprop="articleBody">
             
   <div class="section" id="kernel-density">
-<h1>3.6. <span class="target" id="index-0"></span>Kernel density<a class="headerlink" href="#kernel-density" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">3.6. </span><span class="target" id="index-0"></span>Kernel density<a class="headerlink" href="#kernel-density" title="Permalink to this headline">¶</a></h1>
 <p>A useful tool to visualize the density of a point layer it is the Heatmap. In QGIS, we can directly use a styling option of the layer.</p>
 <blockquote>
 <div><ul class="simple">
-<li>Right-click the <code class="file docutils literal notranslate"><span class="pre">places_clip</span></code> layer on the Layers panel</li>
-<li>Select Properties</li>
-<li>In the menu on the left, select “Symbology”</li>
+<li><p>Right-click the <code class="file docutils literal notranslate"><span class="pre">places_clip</span></code> layer on the Layers panel</p></li>
+<li><p>Select Properties</p></li>
+<li><p>In the menu on the left, select “Symbology”</p></li>
 </ul>
 <a class="reference internal image-reference" href="../_images/3.6_simbology.PNG"><img alt="../_images/3.6_simbology.PNG" src="../_images/3.6_simbology.PNG" style="width: 800px;" /></a>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
 <ul class="simple">
-<li>In the dropdown menu on top, select Heatmap</li>
+<li><p>In the dropdown menu on top, select Heatmap</p></li>
 </ul>
 <a class="reference internal image-reference" href="../_images/3.6_simbology_heatmap.PNG"><img alt="../_images/3.6_simbology_heatmap.PNG" src="../_images/3.6_simbology_heatmap.PNG" style="width: 800px;" /></a>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
 <ul>
-<li><p class="first">Now you only have to choose the parameters:</p>
+<li><p>Now you only have to choose the parameters:</p>
 <blockquote>
 <div><ul class="simple">
-<li>Color ramp: reds</li>
-<li>Radius and radius unit of measure: 10 millimetres</li>
-<li>Maximum value (leave Automatic)</li>
+<li><p>Color ramp: reds</p></li>
+<li><p>Radius and radius unit of measure: 10 millimetres</p></li>
+<li><p>Maximum value (leave Automatic)</p></li>
 </ul>
 </div></blockquote>
 </li>
@@ -267,12 +268,12 @@
 <div class="line"><br /></div>
 </div>
 <ul class="simple">
-<li>Then click OK button on the bottom</li>
+<li><p>Then click OK button on the bottom</p></li>
 </ul>
 <p>The result is the visualization of the places layer as a heatmap:</p>
-<div class="figure" id="id1">
+<div class="figure align-default" id="id1">
 <a class="reference internal image-reference" href="../_images/3.6_heatmap_result.PNG"><img alt="../_images/3.6_heatmap_result.PNG" src="../_images/3.6_heatmap_result.PNG" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.6.1 </span><span class="caption-text">Comparison between the heatmap and a copy of the <code class="file docutils literal notranslate"><span class="pre">places_clip</span></code> layer with the point symbology</span></p>
+<p class="caption"><span class="caption-number">Fig. 3.6.1 </span><span class="caption-text">Comparison between the heatmap and a copy of the <code class="file docutils literal notranslate"><span class="pre">places_clip</span></code> layer with the point symbology</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>
 </div>
@@ -300,7 +301,7 @@
         
         &copy; Copyright 2020, Lorenzo Amici
       <span class="lastupdated">
-        Last updated on Jul 15, 2020.
+        Last updated on Oct 20, 2020.
       </span>
 
     </p>

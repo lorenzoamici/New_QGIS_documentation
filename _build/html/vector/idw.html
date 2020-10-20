@@ -1,7 +1,7 @@
-
+<!--
 
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -13,6 +13,7 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
 
   
@@ -27,10 +28,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -166,7 +167,7 @@
         <p class="caption">
             <span class="caption-text">Index:</span>
         </p>
-        <a href="/QGIS_documentation/genindex.html">Functions</a>
+        <a href="/genindex.html">Functions</a>
     
         </div>
         
@@ -210,9 +211,9 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="vector.html">3. Vector operations</a> &raquo;</li>
+          <li><a href="vector.html"><span class="section-number">3. </span>Vector operations</a> &raquo;</li>
         
-      <li>3.7. Inverse Distance Weighting</li>
+      <li><span class="section-number">3.7. </span>Inverse Distance Weighting</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -232,7 +233,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="inverse-distance-weighting">
-<h1>3.7. <span class="target" id="index-0"></span>Inverse Distance Weighting<a class="headerlink" href="#inverse-distance-weighting" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">3.7. </span><span class="target" id="index-0"></span>Inverse Distance Weighting<a class="headerlink" href="#inverse-distance-weighting" title="Permalink to this headline">¶</a></h1>
 <p>We can also interpolate a point layer to create a raster layer out of it. One method to do so is the Inverse Distance Weighting (IDW)
 interpolation technique. To perform IDW interpolation in QGIS we have to rely on the external functionalities provided by GRASS GIS that
 are directly accessible form the Processing Toolbox of QGIS.
@@ -241,9 +242,9 @@ the <code class="file docutils literal notranslate"><span class="pre">places_cli
 population attribute (i.e. &gt; 0): to do so, follow these steps:</p>
 <blockquote>
 <div><ul class="simple">
-<li>Right click on the <code class="file docutils literal notranslate"><span class="pre">places_clip_point</span></code> layer and open its Attribute table</li>
-<li>Click on “Select features using an expression”</li>
-<li>In the window, write the following expression: <code class="docutils literal notranslate"><span class="pre">&quot;population&quot;</span> <span class="pre">&gt;</span> <span class="pre">0</span></code>, and then click “Select features”</li>
+<li><p>Right click on the <code class="file docutils literal notranslate"><span class="pre">places_clip_point</span></code> layer and open its Attribute table</p></li>
+<li><p>Click on “Select features using an expression”</p></li>
+<li><p>In the window, write the following expression: <code class="docutils literal notranslate"><span class="pre">&quot;population&quot;</span> <span class="pre">&gt;</span> <span class="pre">0</span></code>, and then click “Select features”</p></li>
 </ul>
 <a class="reference internal image-reference" href="../_images/3.7_IDW_select.PNG"><img alt="../_images/3.7_IDW_select.PNG" src="../_images/3.7_IDW_select.PNG" style="width: 800px;" /></a>
 </div></blockquote>
@@ -251,10 +252,10 @@ population attribute (i.e. &gt; 0): to do so, follow these steps:</p>
 v.surf.idw function and input the following parameters:</p>
 <blockquote>
 <div><ul class="simple">
-<li><em>Input vector layer</em>: the <code class="file docutils literal notranslate"><span class="pre">places_clip_point</span></code> layer, be sure to tick the “Selected features only” option</li>
-<li><em>Number of interpolation points</em>: 200</li>
-<li><em>Attribute table column with values to interpolate</em>: select “population”</li>
-<li><em>Interpolated IDW</em>: the path and the name of the output raster layer. Note that if left empty a temporary layer will be created</li>
+<li><p><em>Input vector layer</em>: the <code class="file docutils literal notranslate"><span class="pre">places_clip_point</span></code> layer, be sure to tick the “Selected features only” option</p></li>
+<li><p><em>Number of interpolation points</em>: 200</p></li>
+<li><p><em>Attribute table column with values to interpolate</em>: select “population”</p></li>
+<li><p><em>Interpolated IDW</em>: the path and the name of the output raster layer. Note that if left empty a temporary layer will be created</p></li>
 </ul>
 <a class="reference internal image-reference" href="../_images/3.7_IDW.PNG"><img alt="../_images/3.7_IDW.PNG" src="../_images/3.7_IDW.PNG" style="width: 800px;" /></a>
 </div></blockquote>
@@ -263,21 +264,21 @@ v.surf.idw function and input the following parameters:</p>
 <p>Since this result is not really optimal for an analysis, we can try to style it in a better way. To do so:</p>
 <blockquote>
 <div><ul class="simple">
-<li>Right-click on the newly created raster and click on “Properties”</li>
-<li>In the window, select “Symbology” from the menu on the left</li>
-<li>Change the first option (“Render type”) to “Singleband pseudocolor”</li>
-<li>Now change the classification mode to “Quantile”</li>
-<li>Change the number of classes to 9</li>
-<li>Click “Ok”</li>
+<li><p>Right-click on the newly created raster and click on “Properties”</p></li>
+<li><p>In the window, select “Symbology” from the menu on the left</p></li>
+<li><p>Change the first option (“Render type”) to “Singleband pseudocolor”</p></li>
+<li><p>Now change the classification mode to “Quantile”</p></li>
+<li><p>Change the number of classes to 9</p></li>
+<li><p>Click “Ok”</p></li>
 </ul>
 <a class="reference internal image-reference" href="../_images/3.7_IDW_symbology.PNG"><img alt="../_images/3.7_IDW_symbology.PNG" src="../_images/3.7_IDW_symbology.PNG" style="width: 800px;" /></a>
 <a class="reference internal image-reference" href="../_images/3.7_IDW_symbology_2.PNG"><img alt="../_images/3.7_IDW_symbology_2.PNG" src="../_images/3.7_IDW_symbology_2.PNG" style="width: 800px;" /></a>
 </div></blockquote>
 <p>Now the result should be subdivided in 9 classes that contain an equal number of pixels each; the raster should look like this:</p>
-<div class="figure" id="id1">
+<div class="figure align-default" id="id1">
 <a class="reference internal image-reference" href="../_images/3.7_IDW_result_2.PNG"><img alt="../_images/3.7_IDW_result_2.PNG" src="../_images/3.7_IDW_result_2.PNG" style="width: 100%;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.7.1 </span><span class="caption-text">Now it’s easier to distinguish the variation in population: note for example the dark red area in the top part of the image that represents
-the area where the capital Seoul is.</span></p>
+the area where the capital Seoul is.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 
@@ -304,7 +305,7 @@ the area where the capital Seoul is.</span></p>
         
         &copy; Copyright 2020, Lorenzo Amici
       <span class="lastupdated">
-        Last updated on Jul 15, 2020.
+        Last updated on Oct 20, 2020.
       </span>
 
     </p>

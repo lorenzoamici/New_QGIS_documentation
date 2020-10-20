@@ -1,7 +1,7 @@
-
+<!--
 
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -13,6 +13,7 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
 
   
@@ -27,10 +28,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -165,7 +166,7 @@
         <p class="caption">
             <span class="caption-text">Index:</span>
         </p>
-        <a href="/QGIS_documentation/genindex.html">Functions</a>
+        <a href="/genindex.html">Functions</a>
     
         </div>
         
@@ -209,9 +210,9 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="raster.html">4. Raster operations</a> &raquo;</li>
+          <li><a href="raster.html"><span class="section-number">4. </span>Raster operations</a> &raquo;</li>
         
-      <li>4.1. Merge raster</li>
+      <li><span class="section-number">4.1. </span>Merge raster</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -231,7 +232,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="merge-raster">
-<h1>4.1. <span class="target" id="index-0"></span>Merge raster<a class="headerlink" href="#merge-raster" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">4.1. </span><span class="target" id="index-0"></span>Merge raster<a class="headerlink" href="#merge-raster" title="Permalink to this headline">¶</a></h1>
 <p>We see now how to  Merge multiple raster layers. We do it by combining the Landsat8 imagery bands with the aim of creating a multi-band raster.
 To do so, we have to first add the raster bands into our QGIS project. From the the Browser panel, navigate to the raster data folder and into
 the folder containing the Landsat data (<code class="file docutils literal notranslate"><span class="pre">Landsat8_20160519_20170324_01_T1</span></code>). Then add the raster ending with B2, B3 and B4
@@ -239,18 +240,18 @@ the folder containing the Landsat data (<code class="file docutils literal notra
 so once you added the raster data, go directly to <em>Raster-&gt;Miscellaneous-&gt;Merge</em>, and put this input parameters:</p>
 <blockquote>
 <div><ul class="simple">
-<li><em>Input layers</em>: click on the left symbol and select the Landsat_B2, Landsat_B3 and Landsat_B4 images
+<li><p><em>Input layers</em>: click on the left symbol and select the Landsat_B2, Landsat_B3 and Landsat_B4 images
 (<code class="file docutils literal notranslate"><span class="pre">LC08_L1TP_116034_20160519_20170324_01_T1_B2.TIF</span></code>, <code class="file docutils literal notranslate"><span class="pre">LC08_L1TP_116034_20160519_20170324_01_T1_B3.TIF</span></code> and
-<code class="file docutils literal notranslate"><span class="pre">LC08_L1TP_116034_20160519_20170324_01_T1_B4.TIF</span></code>)</li>
-<li>Tick the “Place each input file into a separate band” checkbox: when not activated, this option is used to merge raster layers covering
-different area and not overlapping between each other. In our case we want to merge images that totally overlap between one another</li>
-<li><em>Output data type</em>: change it to UInt16 to be consistent with the original rasters</li>
-<li><em>Merged</em>: the path and the name of the output raster layer. Note that if left empty a temporary layer will be created</li>
+<code class="file docutils literal notranslate"><span class="pre">LC08_L1TP_116034_20160519_20170324_01_T1_B4.TIF</span></code>)</p></li>
+<li><p>Tick the “Place each input file into a separate band” checkbox: when not activated, this option is used to merge raster layers covering
+different area and not overlapping between each other. In our case we want to merge images that totally overlap between one another</p></li>
+<li><p><em>Output data type</em>: change it to UInt16 to be consistent with the original rasters</p></li>
+<li><p><em>Merged</em>: the path and the name of the output raster layer. Note that if left empty a temporary layer will be created</p></li>
 </ul>
 </div></blockquote>
-<div class="figure" id="id1">
+<div class="figure align-default" id="id1">
 <a class="reference internal image-reference" href="../_images/4.1_merge_raster.PNG"><img alt="../_images/4.1_merge_raster.PNG" src="../_images/4.1_merge_raster.PNG" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.1.1 </span><span class="caption-text">The merge raster function window</span></p>
+<p class="caption"><span class="caption-number">Fig. 4.1.1 </span><span class="caption-text">The merge raster function window</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>The obtained multiband raster at first will look like this:</p>
 <a class="reference internal image-reference" href="../_images/4.1_merge_raster_result.PNG"><img alt="../_images/4.1_merge_raster_result.PNG" src="../_images/4.1_merge_raster_result.PNG" style="width: 100%;" /></a>
@@ -262,8 +263,8 @@ color. To do so, right-click on the <code class="file docutils literal notransla
 <p>Click “Ok” and the true color map obtained should look like this:</p>
 <a class="reference internal image-reference" href="../_images/4.1_true_color_result.PNG"><img alt="../_images/4.1_true_color_result.PNG" src="../_images/4.1_true_color_result.PNG" style="width: 100%;" /></a>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">This is not an accurate true color map because there was no atmospheric correction applied to the Landsat images,
+<p class="admonition-title">Note</p>
+<p>This is not an accurate true color map because there was no atmospheric correction applied to the Landsat images,
 so you’ll find that its colors are brighter than the real ones.</p>
 </div>
 </div>
@@ -289,7 +290,7 @@ so you’ll find that its colors are brighter than the real ones.</p>
         
         &copy; Copyright 2020, Lorenzo Amici
       <span class="lastupdated">
-        Last updated on Jul 15, 2020.
+        Last updated on Oct 20, 2020.
       </span>
 
     </p>

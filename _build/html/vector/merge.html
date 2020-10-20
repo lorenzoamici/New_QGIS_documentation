@@ -1,7 +1,7 @@
-
+<!--
 
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -13,6 +13,7 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
 
   
@@ -27,10 +28,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -166,7 +167,7 @@
         <p class="caption">
             <span class="caption-text">Index:</span>
         </p>
-        <a href="/QGIS_documentation/genindex.html">Functions</a>
+        <a href="/genindex.html">Functions</a>
     
         </div>
         
@@ -210,9 +211,9 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="vector.html">3. Vector operations</a> &raquo;</li>
+          <li><a href="vector.html"><span class="section-number">3. </span>Vector operations</a> &raquo;</li>
         
-      <li>3.2. Merge vector layers</li>
+      <li><span class="section-number">3.2. </span>Merge vector layers</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -232,10 +233,10 @@
            <div itemprop="articleBody">
             
   <div class="section" id="merge-vector-layers">
-<h1>3.2. <span class="target" id="index-0"></span>Merge vector layers<a class="headerlink" href="#merge-vector-layers" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">3.2. </span><span class="target" id="index-0"></span>Merge vector layers<a class="headerlink" href="#merge-vector-layers" title="Permalink to this headline">¶</a></h1>
 <p>Let’s now consider the polygons layers: in particular we will need the <code class="file docutils literal notranslate"><span class="pre">buildings_clip</span></code>, <code class="file docutils literal notranslate"><span class="pre">landuse_a_clip</span></code>,
 <code class="file docutils literal notranslate"><span class="pre">pois_a_clip</span></code>, <code class="file docutils literal notranslate"><span class="pre">pofw_a_clip</span></code> and <code class="file docutils literal notranslate"><span class="pre">water_a_clip</span></code> layers, so you can hide all the others in the map.</p>
-<div class="figure">
+<div class="figure align-default">
 <a class="reference internal image-reference" href="../_images/3.2_only_polygons.PNG"><img alt="../_images/3.2_only_polygons.PNG" src="../_images/3.2_only_polygons.PNG" style="width: 100%;" /></a>
 </div>
 <p>The Merge vector layers function, available at <em>Processing Toolbox-&gt;Vector General-&gt;Merge vector layers</em>, provides an algorithm that
@@ -244,13 +245,13 @@ table of the resulting layer will contain the attributes from all input layers. 
 name and source. We will use it to combine the <code class="file docutils literal notranslate"><span class="pre">landuse_a_clip</span></code> and the <code class="file docutils literal notranslate"><span class="pre">water_a_clip</span></code> in order to get a general layer describing both
 land and water features. To do so, the input parameters are:</p>
 <ul class="simple">
-<li><em>Input layers</em>: click on the icon on the left and select <code class="file docutils literal notranslate"><span class="pre">landuse_a_clip</span></code> and <code class="file docutils literal notranslate"><span class="pre">water_a_clip</span></code></li>
-<li><em>Destination CRS</em>: select the Project CRS, that is <span class="guilabel">EPSG:32652 - WGS84 / UTM zone 52N</span></li>
-<li><em>Merged</em>: the path and the name of the output vector layer. Note that if left empty a temporary layer will be created</li>
+<li><p><em>Input layers</em>: click on the icon on the left and select <code class="file docutils literal notranslate"><span class="pre">landuse_a_clip</span></code> and <code class="file docutils literal notranslate"><span class="pre">water_a_clip</span></code></p></li>
+<li><p><em>Destination CRS</em>: select the Project CRS, that is <span class="guilabel">EPSG:32652 - WGS84 / UTM zone 52N</span></p></li>
+<li><p><em>Merged</em>: the path and the name of the output vector layer. Note that if left empty a temporary layer will be created</p></li>
 </ul>
-<div class="figure" id="id1">
+<div class="figure align-default" id="id1">
 <a class="reference internal image-reference" href="../_images/3.2_merge.PNG"><img alt="../_images/3.2_merge.PNG" src="../_images/3.2_merge.PNG" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.2.1 </span><span class="caption-text">Merge function window</span></p>
+<p class="caption"><span class="caption-number">Fig. 3.2.1 </span><span class="caption-text">Merge function window</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>As you can see this operation creates a new vector that contains features from both the landuse and water bodies layers:</p>
 <a class="reference internal image-reference" href="../_images/3.2_merge_result.PNG"><img alt="../_images/3.2_merge_result.PNG" src="../_images/3.2_merge_result.PNG" style="width: 100%;" /></a>
@@ -279,7 +280,7 @@ land and water features. To do so, the input parameters are:</p>
         
         &copy; Copyright 2020, Lorenzo Amici
       <span class="lastupdated">
-        Last updated on Jul 15, 2020.
+        Last updated on Oct 20, 2020.
       </span>
 
     </p>

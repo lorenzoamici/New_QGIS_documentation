@@ -1,7 +1,7 @@
-
+<!--
 
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -13,6 +13,7 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
 
   
@@ -27,10 +28,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -166,7 +167,7 @@
         <p class="caption">
             <span class="caption-text">Index:</span>
         </p>
-        <a href="/QGIS_documentation/genindex.html">Functions</a>
+        <a href="/genindex.html">Functions</a>
     
         </div>
         
@@ -210,9 +211,9 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="vector.html">3. Vector operations</a> &raquo;</li>
+          <li><a href="vector.html"><span class="section-number">3. </span>Vector operations</a> &raquo;</li>
         
-      <li>3.5. Network analysis</li>
+      <li><span class="section-number">3.5. </span>Network analysis</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -232,9 +233,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="network-analysis">
-<h1>3.5. Network analysis<a class="headerlink" href="#network-analysis" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">3.5. </span>Network analysis<a class="headerlink" href="#network-analysis" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="shortest-path">
-<h2>3.5.1. <span class="target" id="index-0"></span>Shortest path<a class="headerlink" href="#shortest-path" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.5.1. </span><span class="target" id="index-0"></span>Shortest path<a class="headerlink" href="#shortest-path" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>In order to find the shortest or fastest path in QGIS, we can use the Shortest path function. Having a layer representing a network, we can
 calculate the shortest path between two chosen points on the map (point to point), from a point layer to a chosen end point (layer to point)
@@ -242,15 +243,15 @@ or from a chosen start point to a point layer (point to layer).</p>
 <p>We illustrate here only the point to point option for the sake of computation, but the others are easily deduced from the following example.
 The function is available at <em>Processing Toolbox-&gt;Network analysis-&gt;Shortest path (point to point)</em>, and the input parameters are:</p>
 <ul class="simple">
-<li><em>Vector network layer</em>: the <code class="file docutils literal notranslate"><span class="pre">roads_clip</span></code> layer</li>
-<li><em>Path type to calculate</em>: “shortest” (you can also calculate the fastest path given a network layer with maximum velocity information)</li>
-<li><em>Start point</em>: click on the icon on the right, then choose a starting point from the map</li>
-<li><em>End point</em>: click on the icon on the right, then choose an ending point from the map</li>
-<li><em>Shortest path</em>: the path and the name of the output vector layer. Note that if left empty a temporary layer will be created</li>
+<li><p><em>Vector network layer</em>: the <code class="file docutils literal notranslate"><span class="pre">roads_clip</span></code> layer</p></li>
+<li><p><em>Path type to calculate</em>: “shortest” (you can also calculate the fastest path given a network layer with maximum velocity information)</p></li>
+<li><p><em>Start point</em>: click on the icon on the right, then choose a starting point from the map</p></li>
+<li><p><em>End point</em>: click on the icon on the right, then choose an ending point from the map</p></li>
+<li><p><em>Shortest path</em>: the path and the name of the output vector layer. Note that if left empty a temporary layer will be created</p></li>
 </ul>
-<div class="figure" id="id1">
+<div class="figure align-default" id="id1">
 <a class="reference internal image-reference" href="../_images/3.5.1_shortest_path.PNG"><img alt="../_images/3.5.1_shortest_path.PNG" src="../_images/3.5.1_shortest_path.PNG" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.5.1.1 </span><span class="caption-text">Shortest path (point to point) function window</span></p>
+<p class="caption"><span class="caption-number">Fig. 3.5.1.1 </span><span class="caption-text">Shortest path (point to point) function window</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>As you can see this algorithm creates a new line layer that represents the shortest path in the provided network to go from the starting
 point to the end point:</p>
@@ -258,7 +259,7 @@ point to the end point:</p>
 </div></blockquote>
 </div>
 <div class="section" id="generate-service-area">
-<h2>3.5.2. <span class="target" id="index-1"></span>Generate service area<a class="headerlink" href="#generate-service-area" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.5.2. </span><span class="target" id="index-1"></span>Generate service area<a class="headerlink" href="#generate-service-area" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>In QGIS, we can also generate a service area using the Service Area function. To perform such, you can search for Service area in the Processing
 toolbox searchbar and select <em>Service area (from point)</em>. This function allows creating a vector with all the parts of a network
@@ -266,15 +267,15 @@ layer that can be reached within a distance or a time, starting from a point cho
 using <em>Service area (from layer)</em>. We will use the last one to calculate the service area for all the places points with a maximum travel distance
 of 100 meters. The input parameters are:</p>
 <ul class="simple">
-<li><em>Vector network layer</em>: the <code class="file docutils literal notranslate"><span class="pre">roads_clip</span></code> network</li>
-<li><em>Vector layer with start points</em>: the <code class="file docutils literal notranslate"><span class="pre">places_clip_point</span></code> layer</li>
-<li><em>Path type to calculate</em>: “shortest” (you can also calculate the fastest path given a network layer with maximum velocity information)</li>
-<li><em>Travel cost</em>: 100 (so that the maximum travel distance is 100m)</li>
-<li><em>Service area</em>: the path and the name of the output vector layer. Note that if left empty a temporary layer will be created</li>
+<li><p><em>Vector network layer</em>: the <code class="file docutils literal notranslate"><span class="pre">roads_clip</span></code> network</p></li>
+<li><p><em>Vector layer with start points</em>: the <code class="file docutils literal notranslate"><span class="pre">places_clip_point</span></code> layer</p></li>
+<li><p><em>Path type to calculate</em>: “shortest” (you can also calculate the fastest path given a network layer with maximum velocity information)</p></li>
+<li><p><em>Travel cost</em>: 100 (so that the maximum travel distance is 100m)</p></li>
+<li><p><em>Service area</em>: the path and the name of the output vector layer. Note that if left empty a temporary layer will be created</p></li>
 </ul>
-<div class="figure" id="id2">
+<div class="figure align-default" id="id2">
 <a class="reference internal image-reference" href="../_images/3.5.2_service_area.PNG"><img alt="../_images/3.5.2_service_area.PNG" src="../_images/3.5.2_service_area.PNG" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.5.2.1 </span><span class="caption-text">Generate service area function window</span></p>
+<p class="caption"><span class="caption-number">Fig. 3.5.2.1 </span><span class="caption-text">Generate service area function window</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <p>The result will highlight the service area for each point of the places layer:</p>
 <a class="reference internal image-reference" href="../_images/3.5.2_service_area_result.PNG"><img alt="../_images/3.5.2_service_area_result.PNG" src="../_images/3.5.2_service_area_result.PNG" style="width: 100%;" /></a>
@@ -305,7 +306,7 @@ of 100 meters. The input parameters are:</p>
         
         &copy; Copyright 2020, Lorenzo Amici
       <span class="lastupdated">
-        Last updated on Jul 15, 2020.
+        Last updated on Oct 20, 2020.
       </span>
 
     </p>

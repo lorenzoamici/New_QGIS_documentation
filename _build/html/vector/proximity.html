@@ -1,7 +1,7 @@
-
+<!--
 
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -13,6 +13,7 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
 
   
@@ -27,10 +28,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -166,7 +167,7 @@
         <p class="caption">
             <span class="caption-text">Index:</span>
         </p>
-        <a href="/QGIS_documentation/genindex.html">Functions</a>
+        <a href="/genindex.html">Functions</a>
     
         </div>
         
@@ -210,9 +211,9 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="vector.html">3. Vector operations</a> &raquo;</li>
+          <li><a href="vector.html"><span class="section-number">3. </span>Vector operations</a> &raquo;</li>
         
-      <li>3.4. Proximity analysis</li>
+      <li><span class="section-number">3.4. </span>Proximity analysis</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -232,79 +233,79 @@
            <div itemprop="articleBody">
             
   <div class="section" id="proximity-analysis">
-<h1>3.4. Proximity analysis<a class="headerlink" href="#proximity-analysis" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">3.4. </span>Proximity analysis<a class="headerlink" href="#proximity-analysis" title="Permalink to this headline">¶</a></h1>
 <p>We will now focus on operations involving point layers. Please note that QGIS, when clipping a Point layer, also converts
 its geometry type to MultiPoint. This geometry type is not suitable for some of the functions we will use in the next step
 and therefore we will first see how to convert the geometry type back to Point.</p>
-<div class="figure" id="id1">
+<div class="figure align-default" id="id1">
 <a class="reference internal image-reference" href="../_images/3.4_MultiPoint.PNG"><img alt="../_images/3.4_MultiPoint.PNG" src="../_images/3.4_MultiPoint.PNG" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.4.1 </span><span class="caption-text">In the information of the <code class="file docutils literal notranslate"><span class="pre">places_clip</span></code> layer we can see that its geometry is MultiPoint</span></p>
+<p class="caption"><span class="caption-number">Fig. 3.4.1 </span><span class="caption-text">In the information of the <code class="file docutils literal notranslate"><span class="pre">places_clip</span></code> layer we can see that its geometry is MultiPoint</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="convert-geometry-type">
-<h2>3.4.1. <span class="target" id="index-0"></span>Convert geometry type<a class="headerlink" href="#convert-geometry-type" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.4.1. </span><span class="target" id="index-0"></span>Convert geometry type<a class="headerlink" href="#convert-geometry-type" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>Available at <em>Processing Toolbox-&gt;Vector geometry-&gt;Convert geometry type</em>, it provides an algorithm that allows to convert the
 MultiPoint features to single Point features. To do so, the input parameters are:</p>
 <ul class="simple">
-<li><em>Input layer</em>: the point layer whose geometry we want to convert. In this example we use the <code class="file docutils literal notranslate"><span class="pre">places_clip</span></code> layer</li>
-<li><em>New geometry type</em>: select Centroids</li>
-<li><em>Converted</em>: the path and the name of the output vector layer. Note that if left empty a temporary layer will be created</li>
+<li><p><em>Input layer</em>: the point layer whose geometry we want to convert. In this example we use the <code class="file docutils literal notranslate"><span class="pre">places_clip</span></code> layer</p></li>
+<li><p><em>New geometry type</em>: select Centroids</p></li>
+<li><p><em>Converted</em>: the path and the name of the output vector layer. Note that if left empty a temporary layer will be created</p></li>
 </ul>
-<div class="figure" id="id2">
+<div class="figure align-default" id="id2">
 <a class="reference internal image-reference" href="../_images/3.4.1_convert_geometry.PNG"><img alt="../_images/3.4.1_convert_geometry.PNG" src="../_images/3.4.1_convert_geometry.PNG" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.4.1.1 </span><span class="caption-text">Convert geometry function window</span></p>
+<p class="caption"><span class="caption-number">Fig. 3.4.1.1 </span><span class="caption-text">Convert geometry function window</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
-<div class="figure" id="id3">
+<div class="figure align-default" id="id3">
 <a class="reference internal image-reference" href="../_images/3.4.1_Point.PNG"><img alt="../_images/3.4.1_Point.PNG" src="../_images/3.4.1_Point.PNG" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.4.1.2 </span><span class="caption-text">Now the <code class="file docutils literal notranslate"><span class="pre">places_clip</span></code> layer’s geometry is MultiPoint</span></p>
+<p class="caption"><span class="caption-number">Fig. 3.4.1.2 </span><span class="caption-text">Now the <code class="file docutils literal notranslate"><span class="pre">places_clip</span></code> layer’s geometry is MultiPoint</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <p>In order to continue with the following functions, please convert the geometry type also for the <code class="file docutils literal notranslate"><span class="pre">natural_clip</span></code> point layer.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">After you are done with the conversion, you can remove the previous point layers and include in the project only the new ones.</p>
+<p class="admonition-title">Note</p>
+<p>After you are done with the conversion, you can remove the previous point layers and include in the project only the new ones.</p>
 </div>
 </div></blockquote>
 </div>
 <div class="section" id="average-nearest-neighbor">
-<h2>3.4.2. <span class="target" id="index-1"></span>Average Nearest Neighbor<a class="headerlink" href="#average-nearest-neighbor" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.4.2. </span><span class="target" id="index-1"></span>Average Nearest Neighbor<a class="headerlink" href="#average-nearest-neighbor" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>Available at <em>Processing Toolbox-&gt;Vector Analysis-&gt;Nearest Neighbour Analysis</em>, it provides a function that performs nearest neighbor
 analysis for a point layer. The output is generated as an HTML file with the computed statistics. We perform the Nearest Neighbor Analysis
 with the <code class="file docutils literal notranslate"><span class="pre">natural_clip_point</span></code> point layer; the input parameters are:</p>
 <ul class="simple">
-<li><em>Input layer</em>: the <code class="file docutils literal notranslate"><span class="pre">natural_clip_point</span></code> layer</li>
-<li><em>Nearest Neighbor</em>: the path and the name of the output HTML file. Note that if left empty a temporary file will be created</li>
+<li><p><em>Input layer</em>: the <code class="file docutils literal notranslate"><span class="pre">natural_clip_point</span></code> layer</p></li>
+<li><p><em>Nearest Neighbor</em>: the path and the name of the output HTML file. Note that if left empty a temporary file will be created</p></li>
 </ul>
-<div class="figure" id="id4">
+<div class="figure align-default" id="id4">
 <a class="reference internal image-reference" href="../_images/3.4.2_nearest_neighbor.PNG"><img alt="../_images/3.4.2_nearest_neighbor.PNG" src="../_images/3.4.2_nearest_neighbor.PNG" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.4.2.1 </span><span class="caption-text">Nearest Neighbor Analysis function window</span></p>
+<p class="caption"><span class="caption-number">Fig. 3.4.2.1 </span><span class="caption-text">Nearest Neighbor Analysis function window</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <p>Once the operation is done, you can open the HTML file containing the results and you will see information about the Observed mean distance,
 Expected mean distance, Nearest neighbour index, Number of points, and Z-Score.</p>
-<div class="figure" id="id5">
+<div class="figure align-default" id="id5">
 <a class="reference internal image-reference" href="../_images/3.4.2_nearest_neighbor_result.PNG"><img alt="../_images/3.4.2_nearest_neighbor_result.PNG" src="../_images/3.4.2_nearest_neighbor_result.PNG" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.4.2.2 </span><span class="caption-text">The HTML result when opened in the browser</span></p>
+<p class="caption"><span class="caption-number">Fig. 3.4.2.2 </span><span class="caption-text">The HTML result when opened in the browser</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>
 <p>We now see how to calculate the nearest feature to a given point or set of points in QGIS. We distinguish between distances from point to point,
 and from point to a line or polygon layer.</p>
 </div>
 <div class="section" id="distance-from-point-to-point">
-<h2>3.4.3. <span class="target" id="index-2"></span>Distance from point to point<a class="headerlink" href="#distance-from-point-to-point" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.4.3. </span><span class="target" id="index-2"></span>Distance from point to point<a class="headerlink" href="#distance-from-point-to-point" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>Available at <em>Processing toolbox-&gt;Vector analysis-&gt;Distance to nearest hub (points)</em>, it provides an algorithm that computes the distance between
 point features taken as the origin and their closest point destination. In this case, we will calculate the distance from the
 <code class="file docutils literal notranslate"><span class="pre">places_clip_point</span></code> layer to the <code class="file docutils literal notranslate"><span class="pre">natural_clip_point</span></code> layer. The input parameters are:</p>
 <ul class="simple">
-<li><em>Source points layer</em>: the <code class="file docutils literal notranslate"><span class="pre">places_clip_point</span></code> shapefile</li>
-<li><em>Destination hubs layer</em>: the <code class="file docutils literal notranslate"><span class="pre">natural_clip_point</span></code> shapefile</li>
-<li><em>Hub layer name attribute</em>: osm_id</li>
-<li><em>Measurement units</em>: meters</li>
-<li><em>Hub distance</em>: the path and the name of the output vector layer. Note that if left empty a temporary layer will be created</li>
+<li><p><em>Source points layer</em>: the <code class="file docutils literal notranslate"><span class="pre">places_clip_point</span></code> shapefile</p></li>
+<li><p><em>Destination hubs layer</em>: the <code class="file docutils literal notranslate"><span class="pre">natural_clip_point</span></code> shapefile</p></li>
+<li><p><em>Hub layer name attribute</em>: osm_id</p></li>
+<li><p><em>Measurement units</em>: meters</p></li>
+<li><p><em>Hub distance</em>: the path and the name of the output vector layer. Note that if left empty a temporary layer will be created</p></li>
 </ul>
-<div class="figure" id="id6">
+<div class="figure align-default" id="id6">
 <a class="reference internal image-reference" href="../_images/3.4.3_distance_points.PNG"><img alt="../_images/3.4.3_distance_points.PNG" src="../_images/3.4.3_distance_points.PNG" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.4.3.1 </span><span class="caption-text">Distance from point to point function window</span></p>
+<p class="caption"><span class="caption-number">Fig. 3.4.3.1 </span><span class="caption-text">Distance from point to point function window</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 <p>The result is a copy of the places layer, but each point feature has two additional attributes: the id of the nearest natural point feature
 (HubName) and the distance from it (HubDist), as you can see from its attribute table:</p>
@@ -312,33 +313,33 @@ point features taken as the origin and their closest point destination. In this 
 </div></blockquote>
 </div>
 <div class="section" id="distance-from-point-to-layer">
-<h2>3.4.4. <span class="target" id="index-3"></span>Distance from point to layer<a class="headerlink" href="#distance-from-point-to-layer" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.4.4. </span><span class="target" id="index-3"></span>Distance from point to layer<a class="headerlink" href="#distance-from-point-to-layer" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>Available at <em>Processing Toolbox-&gt;Vector analysis-&gt;Distance to nearest hub (line to hub)</em>, it provides an algorithm that computes the distance between
 point features taken as origin and their closest destination line or polygon feature.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Distance calculations are based on the centroid of the line or polygon features.</p>
+<p class="admonition-title">Note</p>
+<p>Distance calculations are based on the centroid of the line or polygon features.</p>
 </div>
 <p>In this case, we calculate the closest forest to each place. To do so, we select all the forests from the <code class="file docutils literal notranslate"><span class="pre">landuse_a_clip</span></code> layer:</p>
 <ul class="simple">
-<li>Right-click on the <code class="file docutils literal notranslate"><span class="pre">landuse_a_clip</span></code> layer in the Layers panel and click on Open attribute table</li>
-<li>Click on the Select features using an expression button</li>
-<li>In the window, write the following expression: <code class="docutils literal notranslate"><span class="pre">&quot;fclass&quot;</span> <span class="pre">is</span> <span class="pre">'forest'</span></code>, and then click “Select features”</li>
+<li><p>Right-click on the <code class="file docutils literal notranslate"><span class="pre">landuse_a_clip</span></code> layer in the Layers panel and click on Open attribute table</p></li>
+<li><p>Click on the Select features using an expression button</p></li>
+<li><p>In the window, write the following expression: <code class="docutils literal notranslate"><span class="pre">&quot;fclass&quot;</span> <span class="pre">is</span> <span class="pre">'forest'</span></code>, and then click “Select features”</p></li>
 </ul>
 <a class="reference internal image-reference" href="../_images/3.4.4_select_expression.PNG"><img alt="../_images/3.4.4_select_expression.PNG" src="../_images/3.4.4_select_expression.PNG" style="width: 800px;" /></a>
 <p>Once we have selected all the forests from the <code class="file docutils literal notranslate"><span class="pre">landuse_clip</span></code> layer, we can run the Distance to nearest hub (line to hub) function.
 The input parameters are:</p>
 <ul class="simple">
-<li><em>Source points layer</em>: the <code class="file docutils literal notranslate"><span class="pre">places_clip_point</span></code> layer</li>
-<li><em>Destination hubs layer</em>: the <code class="file docutils literal notranslate"><span class="pre">landuse_a_clip</span></code> layer, considering only selected features</li>
-<li><em>Hub layer name attribute</em>: osm_id</li>
-<li><em>Measurement units</em>: meters</li>
-<li><em>Hub distance</em>: the path and the name of the output vector layer. Note that if left empty a temporary layer will be created</li>
+<li><p><em>Source points layer</em>: the <code class="file docutils literal notranslate"><span class="pre">places_clip_point</span></code> layer</p></li>
+<li><p><em>Destination hubs layer</em>: the <code class="file docutils literal notranslate"><span class="pre">landuse_a_clip</span></code> layer, considering only selected features</p></li>
+<li><p><em>Hub layer name attribute</em>: osm_id</p></li>
+<li><p><em>Measurement units</em>: meters</p></li>
+<li><p><em>Hub distance</em>: the path and the name of the output vector layer. Note that if left empty a temporary layer will be created</p></li>
 </ul>
-<div class="figure" id="id7">
+<div class="figure align-default" id="id7">
 <a class="reference internal image-reference" href="../_images/3.4.4_distance_polygons.PNG"><img alt="../_images/3.4.4_distance_polygons.PNG" src="../_images/3.4.4_distance_polygons.PNG" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.4.4.1 </span><span class="caption-text">Distance from point to layer function window</span></p>
+<p class="caption"><span class="caption-number">Fig. 3.4.4.1 </span><span class="caption-text">Distance from point to layer function window</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 <p>The result is a line layer representing all the distances from each places point feature to the nearest forest feature.</p>
 <img alt="../_images/3.4.4_distance_polygons_result.PNG" src="../_images/3.4.4_distance_polygons_result.PNG" />
@@ -369,7 +370,7 @@ The input parameters are:</p>
         
         &copy; Copyright 2020, Lorenzo Amici
       <span class="lastupdated">
-        Last updated on Jul 15, 2020.
+        Last updated on Oct 20, 2020.
       </span>
 
     </p>
